@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+  http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+	version="2.1">
+
+	<persistence-unit name="Hannan">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<!-- <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode> -->       <!-- for caching -->  
+		<properties>
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.cj.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://localhost:3306/many-to-many-uni" />
+			<property name="javax.persistence.jdbc.user"
+				value="root" />
+			<property name="javax.persistence.jdbc.password"
+				value="root" />
+			<property name="hibernate.show_sql" value="true" /><!-- value true means data will show on console  if value false the data does not show on console-->
+
+
+			<property name="hibernate.hbm2ddl.auto" value="update" /><!-- update means table will be update.  New table will not create but at here we used create then every time  new table will be create [new table create means table will not update] -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/><!-- this line tell the version of java -->
+  			
+			<!-- for caching --> 
+			<!-- <property name="hibernate.cache.use_second_level_cache" value="true"></property> -->
+			<!-- <property name="hibernate.cache.region.factory_class" value="org.hibernate.cache.ehcache.EhCacheRegionFactory"></property> -->
+			
+		</properties>
+	</persistence-unit>
+	
+</persistence>
